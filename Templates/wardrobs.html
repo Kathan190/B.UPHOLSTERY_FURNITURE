@@ -19,13 +19,44 @@
         <link rel="stylesheet" href="https://cdn.{% static 'jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css'%}" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
         <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js'%}"></script>
 <!--
 	Venue Template
 	http://www.templatemo.com/tm-522-venue
--->
+--> <style>
+            .imgs
+{
+  
+  background-image: url('{%static "assets/img/background.jpg" %}');
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.btns:hover {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 15px;
+}
+
+.btnscolor{
+  background-color: blue;
+}
+
+
+.btns {
+  transition-duration: 0.4s;
+}
+
+    </style>
     </head>
+    
 
 <body>
  
@@ -59,7 +90,7 @@
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="banner-caption">
-                        <h2>WARDROBS</h2>
+                        <h2>Wardrobs</h2>
                         <span>Suspendisse eu lorem massa. Integer sit amet posuere tellus.</span>
                         <div class="blue-button">
                             <a class="scrollTo" data-scrollTo="popular" href="#">Discover More</a>
@@ -71,93 +102,41 @@
         </div>
     </section>
 
-    <section class="popular-places" id="category">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-heading">
-                        <center><h1 class="btn btn-outline-secondary" style="font-size:30px;"><b>Wardrobs</b></h1></center>
-                    </div>
-                </div> 
-            </div> 
-            <div class="owl-carousel owl-theme">
-                <div class="item popular-item">
-                    <div class="thumb">
-                        <img src="{% static 'img/pic1.jpg' %}" alt="" style="height:244px; width:272px;">
-                        <div class="text-content">
-                            <h4>Sofa</h4>
-                            <span>76 listings</span>
-                        </div>
-                        <div class="plus-button">
-                            <a href="#"><i class="fa fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item popular-item">
-                    <div class="thumb">
-                        <img src="{% static 'img/wardrobe.jpg' %}" alt="" style="height:244px; width:272px;">
-                        <div class="text-content">
-                            <h4>Wardrobs</h4>
-                            <span>18 listings</span>
-                        </div>
-                        <div class="plus-button">
-                            <a href="#"><i class="fa fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item popular-item">
-                    <div class="thumb">
-                        <img src="{% static 'img/beds.jpg' %}" alt="" style="height:244px; width:272px;">
-                        <div class="text-content">
-                            <h4>Beds</h4>
-                            <span>55 listings</span>
-                        </div>
-                        <div class="plus-button">
-                            <a href="#"><i class="fa fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item popular-item">
-                    <div class="thumb">
-                        <img src="{% static 'img/chest.jpg'%}" alt="" style="height:244px; width:272px;">
-                        <div class="text-content">
-                            <h4>Chest of drawers</h4>
-                            <span>66 listings</span>
-                        </div>
-                        <div class="plus-button">
-                            <a href="#"><i class="fa fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item popular-item">
-                    <div class="thumb">
-                        <img src="{% static 'img/dining.jpg'%}" alt="" style="height:244px; width:272px;">
-                        <div class="text-content">
-                            <h4>Dining-tables</h4>
-                            <span>82 listings</span>
-                        </div>
-                        <div class="plus-button">
-                            <a href="#"><i class="fa fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item popular-item">
-                    <div class="thumb">
-                        <img src="{% static 'img/dressing.jpg'%}" alt="" style="height:244px; width:272px;">
-                        <div class="text-content">
-                            <h4>Dressing Tables</h4>
-                            <span>76 listings</span>
-                        </div>
-                        <div class="plus-button">
-                            <a href="#"><i class="fa fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </sectiion>
-    
+<br><br>
+<br><br>
 
+
+
+<div class="album py-5 bg-light ">
+<div class="container">
+
+<div class="col-lg-12">
+  
+      {% for wardrobs in wardrobs %}
+        
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 btns" style="border-radius: 15px;">
+              <a href="#"><img class="card-img-top" style="border-radius: 15px;" src="https://source.unsplash.com/700x400/?Beds" alt=""></a>
+              <div class="card-body">
+                <h3 class="card-title">
+                  <a href="#">{{wardrobs.name}}</a>
+                </h3>
+                <h5>£{{wardrobs.price|floatformat:2}}</h5>
+                <p class="card-text">{{wardrobs.description}}</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div>
+            </div>
+          </div>
+
+          
+        {% endfor %}
+
+        </div>
+  
+  </div>
+</div>
 
 
     <footer>

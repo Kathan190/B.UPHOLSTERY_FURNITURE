@@ -15,14 +15,20 @@ def beds(request):
     context = {'beds':beds}
     return render(request, 'beds.html', context)
 
-def chestofdrawer(request):
-    return render(request, 'chestofdrawer.html')
+def chest(request):
+    chest = Chest.objects.all()
+    context = {'chest':chest}
+    return render(request, 'chest.html', context)
 
-def diningtable(request):
-    return render(request, 'diningtable.html')
+def dining(request):
+    dining = Dining.objects.all()
+    context = {'dining':dining}
+    return render(request, 'dining.html', context)
 
-def dressingtable(request):
-    return render(request, 'dressingtable.html')
+def dressing(request):
+    dressing = Dressing.objects.all()
+    context = {'dressing':dressing}
+    return render(request, 'dressing.html', context)
 
 def sofa(request):
     sofa = Sofa.objects.all()
@@ -30,5 +36,7 @@ def sofa(request):
     return render(request, 'sofa.html', context)
 
 def wardrobs(request):
-    return render(request, 'wardrobs.html')
+    wardrobs = Wardrobs.objects.all()
+    context = {'wardrobs':wardrobs}
+    return render(request, 'wardrobs.html', context)
 

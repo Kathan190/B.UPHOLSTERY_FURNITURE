@@ -90,7 +90,7 @@
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="banner-caption">
-                        <h2>SOFA</h2>
+                        <h2>Sofa</h2>
                         <span>Suspendisse eu lorem massa. Integer sit amet posuere tellus.</span>
                         <div class="blue-button">
                             <a class="scrollTo" data-scrollTo="popular" href="#">Discover More</a>
@@ -105,31 +105,40 @@
 <br><br>
 <br><br>
 
+
+
 <div class="album py-5 bg-light ">
 <div class="container">
 
-      <div class="row">
+<div class="col-lg-12">
+  
       {% for sofa in sofa %}
-        <div class="col-md-4 ">
-          <div class="card mb-4 shadow-sm btns" style="border-radius: 15px;">
-            <img class="bd-placeholder-img card-img-top" width="100%" height="225" style="border-radius: 15px;" src="{% static 'assets/img/wardrobe.jpg' %}"></img>
-            <div class="card-body">
-              <h2 style=""><b>{{sofa.name}}</b></h2>
-              <p class="card-text" style="font-size:14px; color:black;">{{sofa.description}}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                 <a href="wardrobs" style="font-size: 15px; border-radius: 14px;" role="button" class="btn btn-primary">Click Here</a>
-                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                 <h4 style="display: inline-block;"><strong>£{{sofa.price|floatformat:2}}</strong></h4>
-                </div>
+        
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100 btns" style="border-radius: 15px;">
+              <a href="#"><img class="card-img-top" style="border-radius: 15px;" src="https://source.unsplash.com/700x400/?Beds" alt=""></a>
+              <div class="card-body">
+                <h3 class="card-title">
+                  <a href="#">{{sofa.name}}</a>
+                </h3>
+                <h5>£{{sofa.price|floatformat:2}}</h5>
+                <p class="card-text">{{csofa.description}}</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
               </div>
             </div>
           </div>
-        </div>
+
+          
         {% endfor %}
+
         </div>
+  
   </div>
 </div>
+
+
     <footer>
         <div class="container">
             <div class="row">
