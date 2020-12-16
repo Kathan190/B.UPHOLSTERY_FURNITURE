@@ -1,4 +1,5 @@
 from django.shortcuts import render,HttpResponse
+from home.models import Sofa
 
 # Create your views here.
 def index(request):
@@ -17,7 +18,9 @@ def dressingtable(request):
     return render(request, 'dressingtable.html')
 
 def sofa(request):
-    return render(request, 'sofa.html')
+    sofa = Sofa.objects.all()
+    context = {'sofa':sofa}
+    return render(request, 'sofa.html', context)
 
 def wardrobs(request):
     return render(request, 'wardrobs.html')

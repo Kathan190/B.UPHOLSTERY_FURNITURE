@@ -19,13 +19,44 @@
         <link rel="stylesheet" href="https://cdn.{% static 'jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css'%}" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
         <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js'%}"></script>
 <!--
 	Venue Template
 	http://www.templatemo.com/tm-522-venue
--->
+--> <style>
+            .imgs
+{
+  
+  background-image: url('{%static "assets/img/background.jpg" %}');
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.btns:hover {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 15px;
+}
+
+.btnscolor{
+  background-color: blue;
+}
+
+
+.btns {
+  transition-duration: 0.4s;
+}
+
+    </style>
     </head>
+    
 
 <body>
  
@@ -71,95 +102,33 @@
         </div>
     </section>
 
-    <section class="popular-places" id="category">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-heading">
-                        <center><h1 class="btn btn-outline-secondary" style="font-size:30px;"><b>Sofa</b></h1></center>
-                    </div>
-                </div> 
-            </div> 
-            <div class="owl-carousel owl-theme">
-                <div class="item popular-item">
-                    <div class="thumb">
-                        <img src="{% static 'img/pic1.jpg' %}" alt="" style="height:244px; width:272px;">
-                        <div class="text-content">
-                            <h4>Sofa</h4>
-                            <span>76 listings</span>
-                        </div>
-                        <div class="plus-button">
-                            <a href="#"><i class="fa fa-plus"></i></a>
-                        </div>
-                    </div>
+<br><br>
+<br><br>
+
+<div class="album py-5 bg-light ">
+<div class="container">
+
+      <div class="row">
+      {% for sofa in sofa %}
+        <div class="col-md-4 ">
+          <div class="card mb-4 shadow-sm btns" style="border-radius: 15px;">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" style="border-radius: 15px;" src="{% static 'assets/img/wardrobe.jpg' %}"></img>
+            <div class="card-body">
+              <h2><b>{{sofa.name}}</b></h2>
+              <p class="card-text">{{sofa.decription}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                 <a href="wardrobs" role="button" class="btn btn-primary">Click Here</a>
+                 <h4 style="display: inline-block; float: right"><strong>£{{sofa.price|floatformat:2}}</strong></h4>
                 </div>
-                <div class="item popular-item">
-                    <div class="thumb">
-                        <img src="{% static 'img/wardrobe.jpg' %}" alt="" style="height:244px; width:272px;">
-                        <div class="text-content">
-                            <h4>Wardrobs</h4>
-                            <span>18 listings</span>
-                        </div>
-                        <div class="plus-button">
-                            <a href="#"><i class="fa fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item popular-item">
-                    <div class="thumb">
-                        <img src="{% static 'img/beds.jpg' %}" alt="" style="height:244px; width:272px;">
-                        <div class="text-content">
-                            <h4>Beds</h4>
-                            <span>55 listings</span>
-                        </div>
-                        <div class="plus-button">
-                            <a href="#"><i class="fa fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item popular-item">
-                    <div class="thumb">
-                        <img src="{% static 'img/chest.jpg'%}" alt="" style="height:244px; width:272px;">
-                        <div class="text-content">
-                            <h4>Chest of drawers</h4>
-                            <span>66 listings</span>
-                        </div>
-                        <div class="plus-button">
-                            <a href="#"><i class="fa fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item popular-item">
-                    <div class="thumb">
-                        <img src="{% static 'img/dining.jpg'%}" alt="" style="height:244px; width:272px;">
-                        <div class="text-content">
-                            <h4>Dining-tables</h4>
-                            <span>82 listings</span>
-                        </div>
-                        <div class="plus-button">
-                            <a href="#"><i class="fa fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item popular-item">
-                    <div class="thumb">
-                        <img src="{% static 'img/dressing.jpg'%}" alt="" style="height:244px; width:272px;">
-                        <div class="text-content">
-                            <h4>Dressing Tables</h4>
-                            <span>76 listings</span>
-                        </div>
-                        <div class="plus-button">
-                            <a href="#"><i class="fa fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </sectiion>
-    
-
-
-
+        {% endfor %}
+        </div>
+  </div>
+</div>
     <footer>
         <div class="container">
             <div class="row">
