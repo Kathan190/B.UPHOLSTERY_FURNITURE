@@ -114,12 +114,13 @@
           <div class="card mb-4 shadow-sm btns" style="border-radius: 15px;">
             <img class="bd-placeholder-img card-img-top" width="100%" height="225" style="border-radius: 15px;" src="{% static 'assets/img/wardrobe.jpg' %}"></img>
             <div class="card-body">
-              <h2><b>{{sofa.name}}</b></h2>
-              <p class="card-text">{{sofa.decription}}</p>
+              <h2 style=""><b>{{sofa.name}}</b></h2>
+              <p class="card-text" style="font-size:14px; color:black;">{{sofa.description}}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                 <a href="wardrobs" role="button" class="btn btn-primary">Click Here</a>
-                 <h4 style="display: inline-block; float: right"><strong>£{{sofa.price|floatformat:2}}</strong></h4>
+                 <a href="wardrobs" style="font-size: 15px; border-radius: 14px;" role="button" class="btn btn-primary">Click Here</a>
+                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                 <h4 style="display: inline-block;"><strong>£{{sofa.price|floatformat:2}}</strong></h4>
                 </div>
               </div>
             </div>
