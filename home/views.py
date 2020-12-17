@@ -5,9 +5,16 @@ from home.models import Chest
 from home.models import Dining
 from home.models import Dressing
 from home.models import Wardrobs
+from home.models import Index
 
 # Create your views here.
 def index(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        index = Index(name=name, subject=subject, message=message)
+        index.save()
     return render(request, 'index.html')
 
 def beds(request):

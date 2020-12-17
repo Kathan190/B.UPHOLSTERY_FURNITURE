@@ -49,3 +49,11 @@ class Wardrobs(models.Model):
 
     def __str__(self):
         return self.name
+
+class Index(models.Model):
+    name = models.CharField(max_length=100, null=True)
+    subject = models.CharField(max_length=200)
+    message = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.name + self.subject
