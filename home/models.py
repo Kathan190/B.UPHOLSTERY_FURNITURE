@@ -7,6 +7,7 @@ class Sofa(models.Model):
     price = models.FloatField()
     image = models.ImageField(upload_to='media/image',default='')
     description = models.CharField(max_length=1000)
+    
 
     def __str__(self):
         return self.name

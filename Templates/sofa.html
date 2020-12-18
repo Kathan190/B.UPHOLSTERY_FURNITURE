@@ -112,13 +112,17 @@
         
         <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100 btns" style="border-radius: 15px;">
+<<<<<<< HEAD
               <a href="#"><img class="card-img-top" style="border-radius: 15px;" src="{{ sofa.image.url }}" alt=""></a>
+=======
+              <a href="#"><img class="card-img-top" style="border-radius: 15px;" src="{{sofa.image}}" alt=""></a>
+>>>>>>> 66d44186ab36a57484b81d864997e4249d30458b
               <div class="card-body">
                 <h3 class="card-title">
                   <a href="#">{{sofa.name}}</a>
                 </h3>
                 <h5>£{{sofa.price|floatformat:2}}</h5>
-                <p class="card-text">{{csofa.description}}</p>
+                <p class="card-text">{{sofa.description}}</p>
               </div>
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
