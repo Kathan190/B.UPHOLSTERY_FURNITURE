@@ -5,15 +5,18 @@ from django.db import models
 class Sofa(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.FloatField()
+    image = models.ImageField(upload_to='media/image',default='')
     description = models.CharField(max_length=1000)
+    
 
     def __str__(self):
         return self.name
 
 class Beds(models.Model):
-    name = models.CharField(max_length=200, null=True)
-    price = models.FloatField()
-    description = models.CharField(max_length=1000)
+    name = models.CharField(max_length=200, null=True,default='')
+    price = models.FloatField(default=0)
+    image = models.ImageField(upload_to='media/image',default='')
+    description = models.CharField(max_length=1000,default='')
 
     def __str__(self):
         return self.name
@@ -21,6 +24,7 @@ class Beds(models.Model):
 class Chest(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.FloatField()
+    image = models.ImageField(upload_to='media/image',default='')
     description = models.CharField(max_length=1000)
 
     def __str__(self):
@@ -29,6 +33,7 @@ class Chest(models.Model):
 class Dining(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.FloatField()
+    image = models.ImageField(upload_to='media/image',default='')
     description = models.CharField(max_length=1000)
 
     def __str__(self):
@@ -37,6 +42,7 @@ class Dining(models.Model):
 class Dressing(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.FloatField()
+    image = models.ImageField(upload_to='media/image',default='')
     description = models.CharField(max_length=1000)
 
     def __str__(self):
@@ -45,6 +51,7 @@ class Dressing(models.Model):
 class Wardrobs(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.FloatField()
+    image = models.ImageField(upload_to='media/image',default='')
     description = models.CharField(max_length=1000)
 
     def __str__(self):
