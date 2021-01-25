@@ -121,7 +121,11 @@
                 </h3>
                 <h5>£{{chest.price|floatformat:2}}</h5>
                 <p class="card-text">{{chest.description}}</p>
-                <a class="btn btn-primary" role="button" href="#">Talk with us</a>
+               <form method="POST" action="{% url 'image' %}">
+                {% csrf_token %}
+                     <input hidden type="text" class="btn btn-primary" name="item_name" value={{chest.name}}>
+                     <input type="submit" class="btn btn-primary" name="More info" value="More info" />   
+                </form>
               </div>
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -146,7 +150,7 @@
                         <div class="logo">
                             <img style="width: 500px; height: 100px" src="{% static 'img/website.jpg' %}" alt="Venue Logo">
                         </div>
-                        <p>Mauris sit amet quam congue, pulvinar urna et, congue diam. Suspendisse eu lorem massa. Integer sit amet posuere tellus, id efficitur leo. In hac habitasse platea dictumst.</p>
+                        <p>This website is about Home living Furniture shop. You can browse all Furniture products and be contact with our best Associates.</p>
                         <ul class="social-icons">
                             <li>
                                 <a href="#"><i class="fa fa-facebook"></i></a>

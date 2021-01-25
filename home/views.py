@@ -6,6 +6,8 @@ from home.models import Dining
 from home.models import Dressing
 from home.models import Wardrobs
 from home.models import Index
+from home.models import Images
+from home.models import Temp
 
 # Create your views here.
 def index(request):
@@ -46,4 +48,23 @@ def wardrobs(request):
     wardrobs = Wardrobs.objects.all()
     context = {'wardrobs':wardrobs}
     return render(request, 'wardrobs.html', context)
+
+def image(request):
+    tmp_name = Temp.objects.all()
+    if request.method == 'POST':
+        if request.POST.get("More info")=="More info":
+            item_name=request.POST['item_name']
+            query = item_name
+            images = Images.objects.filter(name=query)
+
+            tmp=Temp(id=1,name=item_name)
+            tmp.save()
+
+
+
+    
+    context = {'tmp_name':tmp_name, 'images':images}
+
+    
+    return render(request, 'image.html', context)
 

@@ -64,3 +64,18 @@ class Index(models.Model):
 
     def __str__(self):
         return self.name + self.subject
+
+class Images(models.Model):
+    name = models.CharField(max_length=100, null=True)
+    image1 = models.ImageField(upload_to='media/image', default='')
+    image2 = models.ImageField(upload_to='media/image', default='')
+    image3 = models.ImageField(upload_to='media/image', default='')
+
+    def __str__(self):
+        return self.name 
+
+class Temp(models.Model):
+    name = models.CharField(max_length=100, null=True)
+
+    def __str__(self):
+        return self.name
